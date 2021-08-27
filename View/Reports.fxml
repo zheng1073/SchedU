@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsController">
+    <children>
+      <VBox layoutX="122.0" layoutY="85.0" prefHeight="514.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="700.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onClickA" text="Appointment">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#onClickC" text="Customer">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button disable="true" mnemonicParsing="false" text="Reports">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="90.0" prefWidth="700.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="1.0" top="3.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="Report 1:" />
+                        <ComboBox fx:id="reportOneMonth" prefHeight="25.0" prefWidth="103.0" promptText="Month">
+                           <HBox.margin>
+                              <Insets left="10.0" top="-5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="reportOneType" prefHeight="25.0" prefWidth="90.0" promptText="Type">
+                           <HBox.margin>
+                              <Insets left="10.0" top="-5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" onAction="#onClickReportOne" text="Generate">
+                           <HBox.margin>
+                              <Insets left="10.0" top="-5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label fx:id="reportOneResult" prefHeight="20.0" prefWidth="210.0" text="Number of Appointments" textFill="#0f752f" underline="true" visible="false">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#onSelectClear1" text="Clear">
+                           <HBox.margin>
+                              <Insets left="35.0" top="-5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label text="Report 2:">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="reportThreeCountry" prefWidth="150.0" promptText="Country">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" onAction="#onClickReportThree" text="Generate">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label fx:id="reportThreeResult" prefHeight="20.0" prefWidth="201.0" text="Number of Customers" textFill="#0b792e" underline="true" visible="false">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="onClear3" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#onSelectClear3" text="Clear">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="100.0" prefWidth="495.0">
+                           <children>
+                              <Label layoutY="6.0" text="Report 3:" />
+                              <ComboBox fx:id="reportTwoContact" layoutX="59.0" layoutY="2.0" prefWidth="150.0" promptText="Contacts" />
+                              <Button layoutX="222.0" layoutY="3.0" mnemonicParsing="false" onAction="#onClickReportTwo" text="Generate" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="25.0" prefWidth="252.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="334.0" prefWidth="700.0">
+               <children>
+                  <Label text="The table below is solely used for Report 3. Report 1 and 2 will return a count adjacent to the generate button." textFill="#94551b">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="10.0" top="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="aptTable" prefHeight="338.0" prefWidth="700.0">
+                    <columns>
+                      <TableColumn fx:id="Appointment_ID" prefWidth="103.0" text="Appointment ID" />
+                      <TableColumn fx:id="Title" text="Title" />
+                        <TableColumn fx:id="Description" prefWidth="79.0" text="Description" />
+                        <TableColumn fx:id="Location" prefWidth="87.0" text="Location" />
+                        <TableColumn fx:id="Contact_ID" prefWidth="77.0" text="Contact" />
+                        <TableColumn fx:id="Type" prefWidth="56.0" text="Type" />
+                        <TableColumn fx:id="Start" prefWidth="59.0" text="Start" />
+                        <TableColumn fx:id="End" prefWidth="57.0" text="End" />
+                        <TableColumn fx:id="Customer_ID" prefWidth="81.0" text="Customer ID" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            <Label fx:id="productDeleteLabel" text="Appointment Deleted ! (Appointment ID: , Type: )" textFill="#e11f1f" visible="false">
+               <VBox.margin>
+                  <Insets left="10.0" top="2.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
